@@ -1,0 +1,41 @@
+<!-- Modal -->
+<div class="modal fade" id="elegantModalForm" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">SignUp</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="registerationForm" (ngSubmit)="login()">
+                
+                <div class="form-group row">
+                    <label for="email" class="col-4">
+                        Email
+                    </label>
+                    <input  formControlName="email" type="text" id="email" class="col form-control">
+                </div>
+                
+              <div class="form-group row">
+                <label for="password" class="col-4">
+                    password
+                </label>
+                <input type="password" formControlName="password" id="password" class="col form-control">
+            </div>
+         
+       
+              <div class="alert alert-success" *ngIf="controlsvalid">
+                Successfully Added
+            </div>
+                <div class="form-group row justify-content-center">
+                    <input type="submit" value="add" class="btn btn-success" [disabled]="!controlsvalid" data-dismiss="modal">
+                </div>
+            </form>
+           </div>
+       
+      </div>
+    </div>
+  </div>
+ 
