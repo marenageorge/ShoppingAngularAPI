@@ -88,8 +88,14 @@ namespace AngularApi
 
                 app.UseDeveloperExceptionPage();
             }
+            // allowing CORS
+          
+
             app.UseAuthentication();
-            app.UseCors(builder => builder.WithOrigins(Configuration["ApplicationSettings:Client_URL"].ToString()).AllowAnyHeader().AllowAnyMethod());
+            
+            app.UseCors(builder => builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
             app.UseRouting();
             app.UseOpenApi();
             app.UseSwaggerUi3();
